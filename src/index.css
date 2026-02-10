@@ -1,0 +1,270 @@
+/* =======================
+   Body & Container
+======================= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #1e1e2f; /* dark navy */
+  color: #e0e0e0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #2a2a40; /* subtle contrast */
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+
+/* =======================
+   Header / Navbar
+======================= */
+header {
+  padding: 20px 0;
+  background: linear-gradient(90deg, #4b6cb7, #182848); /* professional gradient */
+  color: #fff;
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+header nav a {
+  margin: 0 18px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: #ffcb6b; /* soft yellow highlight */
+  transform: scale(1.15);
+}
+
+/* =======================
+   Table / Book List
+======================= */
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  min-width: 600px;
+}
+
+th, td {
+  padding: 15px 18px;
+  text-align: left;
+}
+
+th {
+  background: linear-gradient(90deg, #4b6cb7, #182848); /* header gradient */
+  color: #fff;
+  font-weight: 700;
+  border-radius: 12px 12px 0 0;
+  letter-spacing: 0.5px;
+}
+
+tr {
+  background: #2a2a40; /* row background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+tr:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  background: #3a3a5c; /* hover highlight */
+}
+
+/* Row fade-in animation */
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* =======================
+   Buttons
+======================= */
+button {
+  padding: 8px 16px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+button.edit {
+  background: linear-gradient(45deg, #4db6ac, #26a69a); /* muted teal */
+  color: #fff;
+}
+button.edit:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+}
+
+button.delete {
+  background: linear-gradient(45deg, #ff7043, #ff5722); /* muted orange */
+  color: #fff;
+}
+button.delete:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.7);
+}
+
+button.submit {
+  background: linear-gradient(90deg, #6a82fb, #fc5c7d); /* soft purple-pink */
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+button.submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+
+/* Ripple effect on buttons */
+button:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.2);
+  display: block;
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.5s, opacity 1s;
+}
+
+button:active:after {
+  transform: scale(3);
+  opacity: 1;
+  transition: 0s;
+}
+
+/* =======================
+   Form / Inputs
+======================= */
+.form-container {
+  background: #2a2a40;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+  max-width: 650px;
+  margin: 0 auto 50px;
+  transition: 0.3s;
+}
+
+form label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  color: #e0e0e0;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 18px;
+  border: 2px solid #444;
+  border-radius: 12px;
+  background: #3a3a5c;
+  color: #e0e0e0;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #6a82fb; /* focus glow */
+  box-shadow: 0 0 12px rgba(106,130,251,0.5);
+  outline: none;
+}
+
+form textarea {
+  min-height: 140px;
+}
+
+/* Success message popup */
+.success-msg {
+  background: linear-gradient(90deg, #43e97b, #38f9d7);
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: #121212;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+  animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Form error message */
+form p {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: -12px;
+  margin-bottom: 12px;
+}
+
+/* =======================
+   Links & Text
+======================= */
+a {
+  text-decoration: none;
+  color: #6a82fb;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #fc5c7d;
+  text-decoration: underline;
+}
+
+/* =======================
+   Responsive
+======================= */
+@media (max-width: 768px) {
+  .container, .form-container {
+    margin: 20px;
+    padding: 25px;
+  }
+
+  table {
+    min-width: 100%;
+  }
+
+  th, td {
+    padding: 12px;
+  }
+
+  button {
+    padding: 6px 12px;
+  }
+
+  header nav a {
+    display: block;
+    margin: 8px 0;
+  }
+}
