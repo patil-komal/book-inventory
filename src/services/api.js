@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/books";
+const API_URL = "https://book-inventory-api-ea1i.onrender.com/books";
 
 export const getBooks = () => axios.get(API_URL);
 export const getBook = (id) => axios.get(`${API_URL}/${id}`);
