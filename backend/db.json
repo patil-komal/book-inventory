@@ -1,0 +1,12 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Book 1",
+      "author": "Author 1",
+      "publisher": "Publisher 1",
+      "publishedDate": "2026-01-01",
+      "overview": "Overview of Book 1"
+    }
+  ]
+}
